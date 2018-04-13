@@ -1,0 +1,31 @@
+
+#wrapper {
+    padding: 20px;
+    width: 1000px;
+}
+#header {
+    margin: 20px 0px 40px 0px;
+    width: 950px;
+}
+#header h2 {
+    display: inline;
+    margin-right: 400px;
+}
+#header div {
+    display: inline;
+}
+#left-pane {
+    vertical-align: top;
+    display: inline-block;
+    width: 475px;
+}
+#right-pane {
+    display: inline-block;
+    width: 475px;
+}
+#all-books {
+    overflow-y: auto;
+    width: 400px;
+    height: 400px;
+    border: 1px solid grey;
+}

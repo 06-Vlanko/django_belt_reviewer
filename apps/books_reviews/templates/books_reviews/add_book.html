@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'books_reviews/skeleton.css' %}">
+        <link rel="stylesheet" href="{% static 'books_reviews/normalize.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'books_reviews/style-add-book.css' %}"> -->
+        <title>Login and Reg</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <a href="/books">Home</a> | <a href="/logout">Log Out</a>
+            </div>
+            <h4>Add a New Book Title and a Review</h4>
+            <form action="/books/create" method="post">
+                {% csrf_token %}
+                <label for="title">Book Title:</label>
+                <input type="text" name="title">
+                <label for="author"></label>
+                <select name="author">
+                    
+                </select>
+                <label for="new_author">Or add a new author:</label>
+                <input type="text" name="new_author">
+                <label for="review">Review:</label>
+                <textarea name="review" cols="60" rows="3"></textarea>
+                <input type="number" min="1" max="5">
+                <input type="submit" value="Add Book and Review">
+            </form>
+        </div>
+    </body>
+</html>        

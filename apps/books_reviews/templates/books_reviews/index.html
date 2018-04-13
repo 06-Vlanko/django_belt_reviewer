@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'books_reviews/skeleton.css' %}">
+        <link rel="stylesheet" href="{% static 'books_reviews/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'books_reviews/style-index.css' %}">
+        <title>Login and Reg</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="register">
+                {% for message in messages %}
+                    {% if 'registration error' in message.tags %}
+                        <p>{{ message }}</p>
+                    {% endif %}
+                {% endfor %}
+                <h1>Registration</h1>
+                <form action="/register" method="post">
+                    {% csrf_token %}
+                    <p>
+                        <label for="name">Name:</label>
+                        <input type="text" name="name">
+                    </p>
+                    <p>
+                        <label for="alias">Alias:</label>
+                        <input type="text" name="alias">
+                    </p>
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="text" name="email">
+                    </p>
+                    <p>
+                        <label for="password">Password:</label>
+                        <input type="password" name="password">
+                    </p>
+                    <p>*Password should be at least 8 characters</p>
+                    <p>
+                        <label for="confirm_password">Confirm Password:</label>
+                        <input type="password" name="confirm_password">
+                    </p>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+            <div id="login">
+                {% for message in messages %}
+                    {% if 'login error' in message.tags %}
+                        <p>{{ message }}</p>
+                    {% endif %}
+                {% endfor %}
+                <h1>Login</h1>
+                <form action="/login" method="post">
+                    {% csrf_token %}
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="text" name="email">
+                    </p>
+                    <p>
+                        <label for="password">Password:</label>
+                        <input type="password" name="password">
+                    </p>
+                    <input type="submit" name="Login">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

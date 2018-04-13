@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'books_reviews/skeleton.css' %}">
+        <link rel="stylesheet" href="{% static 'books_reviews/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'books_reviews/style-dashboard.css' %}">
+        <title>Login and Reg</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <h2>Welcome {{request.session.alias}}</h2>
+                <div>
+                    <a href="books/add">Add Book and Review</a> | <a href="/logout">Logout</a>
+                </div>
+            </div>
+            <div id="left-pane">
+                <h4>Recent Book Reviews</h4>
+                <div id="recent-reviews">
+                    <!-- jinja content three latest reviews -->
+                </div>
+            </div>
+            <div id="right-pane">
+                <h4>Other Books with reviews</h4>
+                <div id='all-books'>
+                    <!-- jinja content all books names -->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>        

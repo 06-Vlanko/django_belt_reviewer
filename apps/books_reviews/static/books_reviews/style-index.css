@@ -1,0 +1,15 @@
+label {
+    display: inline-block;
+    width: 150px;
+}
+#wrapper {
+    padding: 20px;
+}
+#wrapper div {
+    display: inline-block;
+    padding: 30px;
+    vertical-align: top;
+}
+#register {
+    border-right: 2px solid gray;
+}
